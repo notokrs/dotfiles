@@ -1,0 +1,63 @@
+configuration{
+	modi: "window,run,ssh,drun,emoji";
+	show-icons: true;
+}
+
+*{
+	font: "SpaceMono 9";
+	foreground: #f8f8f2;
+	background-color: #272A34;
+	active-background: #FFD86E;
+	urgent-background: #dc322f;
+	text-color: @foreground;
+	width: 512px;
+	lines: 6;
+}
+
+#element-icon{
+	size: 2.5ch;
+}
+
+/*#window{
+	border: 2px;
+	border-color: @active-background;
+}*/
+
+#inputbar {
+  /*border: 0 0 2px 0;*/
+  padding: 0;
+	/* border-color: @active-background;*/
+  children: [prompt,entry];
+}
+
+#prompt {
+  padding: 12px;
+  border: 0 1px 0 0;
+}
+
+/*#textbox {
+  background-color: @active-background;
+  border: 0 0 1px 0;
+  border-color: #fff;
+  padding: 8px 14px;
+}*/
+
+#entry {
+  padding: 12px;
+}
+
+#listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
+}
+
+#element {
+	/* border: 0 0 1px 0;*/
+  padding: 12px;
+}
+
+#element selected {
+  background-color: @active-background;
+  text-color: @background-color;
+}

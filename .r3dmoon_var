@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+##################################
+##     User Scripts Setting     ##
+##################################
+
+# Notify Battery
+BATT_MIN_PERCENTAGE=35
+BATT_MAX_PERCENTAGE=60
+
+# Album Art NCMPCPP
+# value = w3m or pixbuff
+NCMPCPP_ALBUM_ART_BACKEND="w3m"
+
+# Clear Cache Spotify
+CACHE_SPOTIFY_MIN_SIZE=300
+
+
+#########################
+##     WM Settings     ##
+#########################
+
+# MAIN
+export MAIN_BG_COLOR="#272A34"
+export MAIN_PRIMARY_COLOR="#FFD86E"
+
+# Polybar
+export POLYBAR_FOREGROUND_COLOR="#FFF"
+export POLYBAR_FOREGROUND_COLOR_ALT="#C5AF72"
+export POLYBAR_ALERT="#CB4B16"
+
+
+#############################
+##     System Settings     ##
+#############################
+
+source $HOME/.local/bin/default-network-interface

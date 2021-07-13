@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+LC_ALL=C LANG=C; source "$HOME/.r3dmoon_var"
+
+w3m() {
+    [[ "$1" = "clear" ]] && printf "\ec" && exit 0 || :
+    pid=$(pidof ncmpcpp)
+    while [[ -n $pid ]] ; do
+        local window_width="$(xdotool getwindowfocus getwindowgeometry --shell | grep -oP '(?<=WIDTH=).*')"
+        local position_width="$((${window_width} - 250))"
+
+        printf '%b\n%s;\n%s\n' "0;1;${position_width};60;200;200;;;;;${COVER}\n4;\n3;" | /usr/lib/w3m/w3mimgdisplay &> /dev/null
+        sleep 1
+        pid=$(pidof ncmpcpp)
+    done
+    exit 1
+}
+
+pixbuf() {
+    [[ "$1" = "clear" ]] && printf "\e]20;;100x100+1000+1000\a" && exit 0 || :
+    printf "\e]20;${COVER};86x86+04+04:op=keep-aspect\a"
+}
+
+
+MUSIC_DIR="$(cat ~/.ncmpcpp/config | grep 'mpd_music_dir' | awk -F'"' '{print $2}')"
+COVER="/tmp/cover.jpg"
+
+{
+    album="$(mpc --format %album% current -p 6600)"
+    file="$(mpc --format %file% current -p 6600)"
+    album_dir="${file%/*}"
+    [[ -z "$album_dir" ]] && exit 1
+    album_dir="$MUSIC_DIR/$album_dir"
+
+    covers="$(find "$album_dir" -type d -exec find {} -maxdepth 1 -type f -iregex ".*/.*\(${album}\|cover\|folder\|artwork\|front\).*[.]\(jpe?g\|png\|gif\|bmp\)" \; )"
+    src="$(echo -n "$covers" | head -n1)"
+    rm -f "$COVER"
+
+    # Album Art
+    if [[ -n "$src" ]] ; then
+        # Resize the image's width to --px (ffmpeg/imagemagick)
+        ffmpeg -i "$src" -vf scale=350:350 "$COVER" &> /dev/null
+        if [[ -f "$COVER" ]] ; then
+            "$NCMPCPP_ALBUM_ART_BACKEND"
+        else
+            "$NCMPCPP_ALBUM_ART_BACKEND" clear
+        fi
+    elif [[ -z "$src" ]]; then
+        # ffmpeg extracting album art from mp3 & resizing
+        ffmpeg -i "$MUSIC_DIR/$file" -vf scale=350:350 "$COVER" &> /dev/null
+        if [[ -f "$COVER" ]] ; then
+            "$NCMPCPP_ALBUM_ART_BACKEND"
+        else
+            "$NCMPCPP_ALBUM_ART_BACKEND" clear
+        fi
+    else
+        "$NCMPCPP_ALBUM_ART_BACKEND" clear
+    fi
+} &

@@ -1,0 +1,249 @@
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = ${env:MAIN_BG_COLOR}
+foreground = ${env:POLYBAR_FOREGROUND_COLOR}
+foreground-alt = ${env:POLYBAR_FOREGROUND_COLOR_ALT}
+primary = ${env:MAIN_PRIMARY_COLOR}
+alert = ${env:POLYBAR_ALERT}
+
+[bar/mybar]
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+
+line-size = 2
+
+fixed-center = true
+bottom = false
+
+;radius = 6.0
+;radius-bottom = 15
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+;border-bottom-size = 2
+;border-bottom-color = ${colors.primary}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1.5
+
+font-0 = SpaceMono:size=9;0
+font-1 = Source Han Sans HC:size=9;0
+font-2 = material\-wifi:size=9;0
+font-3 = SpaceMono Nerd Font:size=9;1
+font-4 = Material Icons:size=9;1
+
+modules-left = bspwm player-mpris-simple
+modules-center = 
+modules-right = networkspeed-up networkspeed-down pulseaudio memory cpu temperature network bluetooth battery popup-calendar
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;[system-tray]
+tray-position = right
+tray-padding = 2
+tray-background = ${colors.primary}
+
+
+[module/bspwm]
+type = internal/bspwm
+index-sort = true
+
+label-focused = %index%
+label-focused-background = ${colors.primary}
+label-focused-foreground = ${colors.background}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = 
+;label-empty-foreground = ${colors.foreground-alt}
+;label-empty-padding = 2
+
+;label-separator = |
+
+
+[module/player-mpris-simple]
+type = custom/script
+exec = ~/.config/polybar/scripts/player-mpris-simple.sh
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+interval = 5
+
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+format-prefix = "%{A1:lxtask:}CPU%{A}"
+format-prefix-foreground = ${colors.foreground-alt}
+label = %{A1:lxtask:} %percentage:2%%%{A}
+
+
+[module/memory]
+type = internal/memory
+interval = 5
+format-prefix = "RAM "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage_used%%
+
+
+[module/network]
+type = internal/network
+interface = ${env:DEFAULT_NETWORK_INTERFACE:wlan0}
+interval = 5
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %{A1:networkmanager_dmenu:}%essid%%{A}
+
+format-disconnected = %{A1:networkmanager_dmenu:}<label-disconnected> Disconnected%{A}
+
+label-disconnected = "" 
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = ""
+ramp-signal-1 = "" 
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-foreground = ${colors.foreground-alt}
+
+
+[module/bluetooth]
+type = custom/script
+exec = rofi-bluetooth --status
+interval = 10
+click-left = rofi-bluetooth 
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume-prefix = %{A1:pavucontrol:} %{A}
+format-volume-foreground = ${colors.foreground-alt}
+format-volume = %{A1:pavucontrol:}<label-volume>%{A}
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = "婢 Muted"
+label-muted-foreground = ${colors.foreground-alt}
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = "<animation-charging>  <label-charging>"
+
+format-discharging = "<ramp-capacity>  <label-discharging>"
+
+format-full-prefix = ""
+format-full-prefix-foreground = ${colors.foreground-alt}
+
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+
+[module/temperature]
+type = internal/temperature
+interval = 5
+thermal-zone = 0
+base-temperature = 20
+warn-temperature = 75
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = ""
+ramp-1 = ""
+ramp-2 = ""
+ramp-foreground = ${colors.foreground-alt}
+
+
+[module/networkspeed-up]
+type = internal/network
+interface = wlan0
+label-connected = " %upspeed:7%"
+
+format-connected-prefix=""
+format-connected-prefix-foreground=${colors.foreground-alt}
+
+
+[module/networkspeed-down]
+type = internal/network
+interface = wlan0
+label-connected = " %downspeed:7;%"
+
+format-connected-prefix =""
+format-connected-prefix-foreground=${colors.foreground-alt}
+
+
+[module/networkspeed-eth]
+type = internal/network
+interface = eth0
+label-connected =  %upspeed:7%   %downspeed:7;%
+
+
+[module/popup-calendar]
+type = custom/script
+exec = ~/.config/polybar/scripts/popup-calendar.sh
+click-left = ~/.config/polybar/scripts/popup-calendar.sh --popup &
+format-background = ${colors.primary}
+format-foreground = ${colors.background}
+format-padding = 2
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = true
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5

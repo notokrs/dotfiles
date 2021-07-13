@@ -1,0 +1,62 @@
+# MPD
+mpd_host = localhost
+mpd_port = 6600
+mpd_connection_timeout = 5
+mpd_music_dir = "/mnt/WINDOWS/Users/Rusnoto/Music"
+mpd_crossfade_time = 5
+
+# Visualizer
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "▗"
+visualizer_color = "yellow"
+#visualizer_color = blue, cyan, green, yellow, magenta, red
+
+# GLOBAL
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "no"
+lines_scrolled = "1"
+message_delay_time = "1"
+playlist_shorten_total_times = "yes"
+playlist_display_mode = "classic"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+user_interface = "alternative"
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "65"
+ask_for_locked_screen_width_part = "yes"
+display_bitrate = "no"
+external_editor = "nano"
+main_window_color = "default"
+
+# PROGRESSBAR
+#progressbar_look = "━━━"
+progressbar_look = "▃▃▃"
+progressbar_elapsed_color = "yellow"
+progressbar_color = "black"
+
+# UI VISIBILITY
+header_visibility = "no"
+statusbar_visibility = "no"
+titles_visibility = "no"
+enable_window_title = "yes"
+
+# COLOR
+statusbar_color = "default"
+
+# UI FORMAT
+now_playing_prefix = "$b$(yellow)"
+now_playing_suffix = "$/b"
+current_item_prefix = "$(blue)"
+selected_item_suffix = "yellow"
+song_list_format = "{%t $R            $(white)%a    $(yellow)  $(yellow)%l$(white)                                 }|{ %f $R$(yellow)   $(yellow)%l$(white)                                 } $(white)"
+song_status_format = "{$b$2 $5 $8%t $5 $6%b}|{$b$2 $5 $8%f}"
+song_window_title_format = "Now Playing .."
+
+# EXEC SCRIPT
+execute_on_song_change="bash -c '~/.ncmpcpp/scripts/album-art'"
