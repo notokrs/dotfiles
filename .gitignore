@@ -2,3 +2,4 @@
 .config/mpd/mpd.log
 .config/mpd/mpd.db
 .config/mpd/db
+.config/mpd/mpd.pid
