@@ -1,0 +1,4 @@
+.config/mpd/mpd.state
+.config/mpd/mpd.log
+.config/mpd/mpd.db
+.config/mpd/db
