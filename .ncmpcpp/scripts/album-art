@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LC_ALL=C LANG=C; source "$HOME/.r3dmoon_var"
+source "$HOME/.r3dmoon_var"
 
 w3m() {
     [[ "$1" = "clear" ]] && printf "\ec" && exit 0 || :

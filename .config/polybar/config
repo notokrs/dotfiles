@@ -49,7 +49,7 @@ module-margin-left = 1
 module-margin-right = 1.5
 
 font-0 = SpaceMono:size=9;0
-font-1 = Source Han Sans HC:size=9;0
+font-1 = Source Han Sans:size=9;0
 font-2 = material\-wifi:size=9;0
 font-3 = SpaceMono Nerd Font:size=9;1
 font-4 = Material Icons:size=9;1

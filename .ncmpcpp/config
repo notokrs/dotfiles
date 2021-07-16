@@ -38,7 +38,7 @@ main_window_color = "default"
 #progressbar_look = "━━━"
 progressbar_look = "▃▃▃"
 progressbar_elapsed_color = "yellow"
-progressbar_color = "black"
+progressbar_color = "244"
 
 # UI VISIBILITY
 header_visibility = "no"
