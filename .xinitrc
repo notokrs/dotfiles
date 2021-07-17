@@ -18,5 +18,4 @@ fi
 xsetroot -cursor_name left_ptr
 
 # Default Session
-exec dbus-launch bspwm
 exec dbus-launch --sh-syntax --exit-with-session bspwm
