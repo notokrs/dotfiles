@@ -15,7 +15,10 @@ redshift -x
 redshift -c ~/.config/redshift/redshift.conf &
 
 # polkit
-/usr/lib/lxpolkit/lxpolkit &
+lxpolkit_pid=$(pgrep lxpoklit)
+if [ -z lxpolkit_pid ]; then
+	/usr/lib/lxpolkit/lxpolkit &
+fi
 
 # greenclip
 killall -q -9 greenclip
