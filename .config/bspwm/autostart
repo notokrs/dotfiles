@@ -10,9 +10,10 @@ kill -9 $mpDris_pid
 mpDris2 &
 
 # redshift
-killall -q redshift
-redshift -x
-redshift -c ~/.config/redshift/redshift.conf &
+redshift_pid=$(pgrep redshift)
+if [ -z $redshift_pid ]; then
+	redshift -c ~/.config/redshift/redshift.conf &
+fi
 
 # polkit
 lxpolkit_pid=$(pgrep lxpolkit)
