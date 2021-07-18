@@ -15,7 +15,7 @@ redshift -x
 redshift -c ~/.config/redshift/redshift.conf &
 
 # polkit
-lxpolkit_pid=$(pgrep lxpoklit)
+lxpolkit_pid=$(pgrep lxpolkit)
 if [ -z lxpolkit_pid ]; then
 	/usr/lib/lxpolkit/lxpolkit &
 fi
