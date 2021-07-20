@@ -17,7 +17,7 @@ bspc config gapless_monocle      true
 
 # App rule
 bspc rule -a Polybar layer=below locked=on
-bspc rule -a Gimp desktop='^8' state=tiling follow=on
+bspc rule -a Gimp-2.10 desktop='^8' state=tiling follow=on
 bspc rule -a Blueman-manager state=floating
 bspc rule -a Blueman-services state=floating
 bspc rule -a URxvt state=floating center=true
@@ -43,6 +43,7 @@ bspc rule -a hp-toolbox state=floating
 bspc rule -a xpad state=floating border=off locked=on sticky=on layer=below manage=off
 bspc rule -a xdman-Main state=floating
 bspc rule -a scrcpy state=floating
+bspc rule -a Nm-connection-editor state=floating center=true
 
 # bspwm color
 #bspc config active_border_color "#AD8C34"
