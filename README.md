@@ -7,6 +7,7 @@ Thank you for visiting my dotfiles repository! This is my personal dotfiles (con
 ## My Setup
 
 -   **Window Manager** : [bspwm](https://github.com/baskerville/bspwm)
+-   **Themes** : [Flat Remix GTK Yellow Darker](https://github.com/daniruiz/flat-remix-gtk)
 -   **Terminal** : [urxvt-unicode](http://software.schmorp.de/pkg/rxvt-unicode.html)
 -   **Shell** : [zsh](https://www.zsh.org/) + [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) + [power10k](https://github.com/romkatv/powerlevel10k)
 -   **Panel/Bar** : [polybar](https://github.com/polybar/polybar)
