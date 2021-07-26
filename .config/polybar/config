@@ -204,7 +204,7 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/networkspeed-up]
 type = internal/network
-interface = wlan0
+interface = ${env:DEFAULT_NETWORK_INTERFACE:wlan0}
 label-connected = " %upspeed:7%"
 
 format-connected-prefix=""
@@ -213,7 +213,7 @@ format-connected-prefix-foreground=${colors.foreground-alt}
 
 [module/networkspeed-down]
 type = internal/network
-interface = wlan0
+interface = ${env:DEFAULT_NETWORK_INTERFACE:wlan0}
 label-connected = " %downspeed:7;%"
 
 format-connected-prefix =""

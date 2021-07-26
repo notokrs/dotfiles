@@ -5,8 +5,8 @@
 ##################################
 
 # Notify Battery
-BATT_MIN_PERCENTAGE=35
-BATT_MAX_PERCENTAGE=60
+BATT_MIN_PERCENTAGE=30
+BATT_MAX_PERCENTAGE=65
 
 # Album Art NCMPCPP
 # value = w3m or pixbuff

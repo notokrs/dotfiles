@@ -116,7 +116,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # }
 
 # Export PATH
-export PATH="$HOME/.node-modules/bin:$PATH"
+source $HOME/.local/bin/default-network-interface
+export PATH="$HOME/.node_modules/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
