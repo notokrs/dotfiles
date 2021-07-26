@@ -119,6 +119,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export PATH="$HOME/.node-modules/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export GRADLE_USER_HOME="/mnt/DATA_II/Android-Studio/.gradle"
 export AWT_TOOLKIT=MToolkit
@@ -137,3 +138,5 @@ alias trim-all="doas fstrim -va"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -10,7 +10,7 @@ w3m() {
         local position_width="$((${window_width} - 250))"
 
         printf '%b\n%s;\n%s\n' "0;1;${position_width};60;200;200;;;;;${COVER}\n4;\n3;" | /usr/lib/w3m/w3mimgdisplay &> /dev/null
-        sleep 1
+        sleep 2
         pid=$(pidof ncmpcpp)
     done
     exit 1

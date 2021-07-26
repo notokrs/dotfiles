@@ -38,10 +38,12 @@
 *.color15: #fdf6e3
 
 !! URxvt Appearance
-URxvt.font: xft:SpaceMono Nerd Font Mono:style=Regular:size=9.2:antialias=true:hinting=true,xft:Noto Color Emoji:pixelsize=9.2:style=Regular,xft:Source Han Sans:size=9.2:style=Regular
+URxvt.font: xft:SpaceMono Nerd Font Mono:style=Regular:size=9.2,xft:Noto Color Emoji:pixelsize=9.2style=Regular,xft:Source Han Sans:size=9.2:style=Regular, xft: Symbola:size=9.2
 URxvt.boldFont: xft:SpaceMono Nerd Font Mono:style=Bold:size=9.2,xft:Source Han Sans:size=9.2:style=Bold
 URxvt.italicFont:xft:SpaceMono Nerd Font Mono:style=Italic:size=9.2,xft:Source Han Sans:size=9.2:style=Italic
 URxvt.boldItalicfont:xft:SpaceMono Nerd Font Mono:style=Bold Italic:size=9.2
+Xft.antialias: true
+Xft.hinting: true
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 85x20

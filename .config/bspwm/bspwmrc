@@ -34,7 +34,6 @@ bspc rule -a Gpick state=floating
 bspc rule -a L3afpad state=floating
 bspc rule -a Pavucontrol state=floating rectangle=745x424
 bspc rule -a Catfish state=floating
-bspc rule -a Xfce4-taskmanager state=floating
 bspc rule -a SimpleScreenRecorder state=floating
 bspc rule -a Yad state=floating
 bspc rule -a System-config-printer.py state=floating center=true rectangle=720x500+0+0
@@ -44,6 +43,7 @@ bspc rule -a xpad state=floating border=off locked=on sticky=on layer=below mana
 bspc rule -a xdman-Main state=floating
 bspc rule -a scrcpy state=floating
 bspc rule -a Nm-connection-editor state=floating center=true
+bspc rule -a Light-locker-settings.py state=floating center=true
 
 # bspwm color
 #bspc config active_border_color "#AD8C34"
