@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Variable
-source "$HOME/.r3dmoon_var"
+source $HOME/.r3dmoon_var
 
 # Terminate already running bar instances
 killall -q polybar
@@ -15,3 +15,5 @@ polybar mybar >>/tmp/polybar1.log 2>&1 & disown
 #polybar mybar-right >>/tmp/polybar2.log 2>&1 & disown
 
 echo "Bars launched..."
+
+exit 1
