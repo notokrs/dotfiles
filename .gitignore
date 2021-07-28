@@ -4,4 +4,4 @@
 .config/mpd/db
 .config/mpd/mpd.pid
 .config/urxvtd-moonland
-.config/.local/share/icons/Flat-Remix-Yellow-Dark
+.local/share/icons/Flat-Remix-Yellow-Dark
