@@ -5,7 +5,7 @@ smplayer_pid=$(pgrep -f smplayer)
 
 if [[ "$player_status" = "Playing" && -z $smplayer_pid ]]; then
     echo  $(playerctl metadata artist) - $(playerctl metadata title)
-elif [ "$player_status" = "Paused" ]; then
+elif [[ "$player_status" = "Paused" && -z $smplayer_pid ]]; then
     echo $(playerctl metadata artist) - $(playerctl metadata title)
 else
     echo ""

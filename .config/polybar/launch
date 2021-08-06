@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# export DISPLAY=":0"
+# export XAUTHORITY="$HOME/.Xauthority"
+# export XDG_RUNTIME_DIR="/run/user/1000"
+export DEFAULT_NETWORK_INTERFACE=$(ip addr | awk '/state UP/ {print $2}' | sed 's/.$//')
+
 # Variable
 source $HOME/.r3dmoon_var
 
@@ -15,5 +20,3 @@ polybar mybar >>/tmp/polybar1.log 2>&1 & disown
 #polybar mybar-right >>/tmp/polybar2.log 2>&1 & disown
 
 echo "Bars launched..."
-
-exit 1

@@ -33,5 +33,3 @@ export POLYBAR_ALERT="#CB4B16"
 #############################
 ##     System Settings     ##
 #############################
-
-source $HOME/.local/bin/default-network-interface
