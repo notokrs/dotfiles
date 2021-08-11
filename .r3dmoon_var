@@ -5,14 +5,16 @@
 ##################################
 
 # Notify Battery
-BATT_MIN_PERCENTAGE=30
-BATT_MAX_PERCENTAGE=70
+# value = 0 - 100
+BATT_MIN_PERCENTAGE=25
+BATT_MAX_PERCENTAGE=90
 
 # Album Art NCMPCPP
 # value = w3m or pixbuff
 NCMPCPP_ALBUM_ART_BACKEND="w3m"
 
 # Clear Cache Spotify
+# value in MB
 CACHE_SPOTIFY_MIN_SIZE=300
 
 

@@ -21,7 +21,7 @@ bspc rule -a Gimp-2.10 desktop='^8' state=tiling follow=on
 bspc rule -a Blueman-manager state=floating
 bspc rule -a Blueman-services state=floating
 bspc rule -a URxvt state=floating center=true
-bspc rule -a smplayer state=floating
+bspc rule -a smplayer state=floating layer=above
 bspc rule -a Bluetooth-sendto state=floating center=true
 bspc rule -a XAVA state=floating border=off locked=on sticky=on layer=below manage=off
 bspc rule -a Arandr state=floating
