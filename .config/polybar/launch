@@ -3,7 +3,7 @@
 # export DISPLAY=":0"
 # export XAUTHORITY="$HOME/.Xauthority"
 # export XDG_RUNTIME_DIR="/run/user/1000"
-export DEFAULT_NETWORK_INTERFACE=$(ip addr | awk '/state UP/ {print $2}' | sed 's/.$//')
+export DEFAULT_NETWORK_INTERFACE=$(ip addr | awk '/state UP/ {print $2; exit}' | sed 's/.$//')
 
 # Variable
 source $HOME/.r3dmoon_var

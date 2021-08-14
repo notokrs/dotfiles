@@ -80,7 +80,7 @@ URxvt.keysym.M-s: perl:keyboard-select:search
 
 !! URL Select
 URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: firefox
+URxvt.url-select.launcher: brave
 URxvt.underlineURLs: true
 URxvt.urlButton: 1
 URxvt.matcher.rend.0: Uline Bold fg5

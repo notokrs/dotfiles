@@ -44,6 +44,7 @@ bspc rule -a xdman-Main state=floating
 bspc rule -a scrcpy state=floating
 bspc rule -a Nm-connection-editor state=floating center=true
 bspc rule -a Light-locker-settings.py state=floating center=true
+bspc rule -a Wihotspot-gui state=floating center=true
 
 # bspwm color
 #bspc config active_border_color "#AD8C34"
