@@ -179,14 +179,14 @@ ctrl + alt + Delete
 super + e
 	thunar
 
-#rofi-emoji
+# rofi-emoji
 super + @period
 	rofi -show emoji -modi emoji
 
-#Flameshot
+# Flameshot
 Print
 	flameshot gui
 
-#Scrot
+# Scrot
 super + Print
 	scrot ~/Pictures/Screenshoot/%Y-%M-%d_%H-%M.png && notify-send "Screenshoot success"

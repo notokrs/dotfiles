@@ -21,7 +21,7 @@ bspc rule -a Gimp-2.10 desktop='^8' state=tiling follow=on
 bspc rule -a Blueman-manager state=floating
 bspc rule -a Blueman-services state=floating
 bspc rule -a URxvt state=floating center=true
-bspc rule -a smplayer state=floating layer=above
+bspc rule -a smplayer state=floating
 bspc rule -a Bluetooth-sendto state=floating center=true
 bspc rule -a XAVA state=floating border=off locked=on sticky=on layer=below manage=off
 bspc rule -a Arandr state=floating
@@ -45,6 +45,9 @@ bspc rule -a scrcpy state=floating
 bspc rule -a Nm-connection-editor state=floating center=true
 bspc rule -a Light-locker-settings.py state=floating center=true
 bspc rule -a Wihotspot-gui state=floating center=true
+bspc rule -a Trebleshot state=floating center=true
+bspc rule -a Cpupower-gui state=floating center=true
+bspc rule -a jetbrains-studio:jetbrains-studio:win0 state=floating center=true
 
 # bspwm color
 #bspc config active_border_color "#AD8C34"

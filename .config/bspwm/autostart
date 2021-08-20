@@ -30,12 +30,16 @@ killall -q light-locker
 light-locker --lock-on-lid --lock-on-suspend --class Bspwm &
 
 # megasync
-killall mega-cmd-server
-mega-cmd-server &
+#killall mega-cmd-server
+#mega-cmd-server &
 
 # keepassxc
 killall keepassxc
 keepassxc &
+
+# powermanager
+killall mate-power-manager
+mate-power-manager &
 
 #xpad
 #killall -q xpad
