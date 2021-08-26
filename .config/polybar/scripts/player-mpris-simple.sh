@@ -6,9 +6,9 @@ title=$(playerctl metadata title 2> /dev/null)
 smplayer_pid=$(pgrep -f smplayer)
 
 if [[ "$player_status" = "Playing" && -z $smplayer_pid ]]; then
-    echo $artist - $title | cut -c 1-50
+    echo "$artist - $title" | cut -c 1-60
 elif [[ "$player_status" = "Paused" && -z $smplayer_pid ]]; then
-    echo $artist - $title | cut -c 1-50
+    echo "$artist - $title" | cut -c 1-60
 else
     echo ""
 fi
