@@ -1,3 +1,5 @@
+/*configuration for rofi ver 1.7.0*/
+
 configuration{
 	modi: "window,run,ssh,drun,emoji";
 	show-icons: true;
@@ -14,49 +16,53 @@ configuration{
 	lines: 6;
 }
 
-#element-icon{
+window {
+    background-color: @background-color;
+    border:           0;
+    padding:          0;
+}
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+element-icon{
 	size: 2.5ch;
 }
 
-/*#window{
-	border: 2px;
-	border-color: @active-background;
-}*/
-
-#inputbar {
-  /*border: 0 0 2px 0;*/
+inputbar {
   padding: 0;
-	/* border-color: @active-background;*/
   children: [prompt,entry];
 }
 
-#prompt {
-  padding: 12px;
-  border: 0 1px 0 0;
-}
-
-/*#textbox {
-  background-color: @active-background;
-  border: 0 0 1px 0;
-  border-color: #fff;
-  padding: 8px 14px;
-}*/
-
-#entry {
+prompt {
   padding: 12px;
 }
 
-#listview {
+entry {
+  padding: 12px;
+}
+
+listview {
   cycle: false;
   margin: 0 0 -1px 0;
   scrollbar: false;
 }
 
-#element {
+element {
   padding: 12px;
 }
 
-#element selected {
+element.selected.normal {
   background-color: @active-background;
   text-color: @background-color;
 }
+
+element.normal.normal {
+	background-color: @background-color;
+}
+
+element.alternate.normal {
+	background-color: @background-color;
+}
+
