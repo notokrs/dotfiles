@@ -17,5 +17,11 @@ fi
 # Default cursor
 xsetroot -cursor_name left_ptr
 
+#xscreensaver setting
+xset s 600 dpms 600 600 600
+
+#init keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+
 # Default Session
-exec dbus-launch --sh-syntax --exit-with-session bspwm
+exec dbus-launch --exit-with-session bspwm

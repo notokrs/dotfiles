@@ -45,7 +45,7 @@
     dmenu = /usr/bin/rofi -dmenu -p dunst show_indicators = true indicate_hidden = false
 
     # Browser
-    browser = firefox
+    browser = brave
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true

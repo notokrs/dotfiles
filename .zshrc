@@ -124,11 +124,13 @@ export PATH="$HOME/.local/bin:$PATH"
 export GRADLE_USER_HOME="/mnt/DATA_II/Android-Studio/.gradle"
 export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dsun.java2d.opengl-true'
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export _JAVA_OPTIONS='-Dsun.java2d.opengl-true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export NO_AT_BRIDGE=1
 #export STUDIO_JDK=/usr/lib/jvm/default
 export PATH="/usr/google/appinventor/commands-for-Appinventor:$PATH"
+export ANDROID_SDK="/mnt/DATA_II/Android-Studio/SDK"
+export PATH="$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH"
+export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
 # Alias
 alias restart-polybar="$HOME/.config/polybar/launch"
