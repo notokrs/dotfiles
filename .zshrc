@@ -130,7 +130,6 @@ export NO_AT_BRIDGE=1
 export PATH="/usr/google/appinventor/commands-for-Appinventor:$PATH"
 export ANDROID_SDK="/mnt/DATA_II/Android-Studio/SDK"
 export PATH="$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH"
-export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
 # Alias
 alias restart-polybar="$HOME/.config/polybar/launch"
