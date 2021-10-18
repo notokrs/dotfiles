@@ -5,3 +5,4 @@
 .config/mpd/mpd.pid
 .config/urxvtd-moonland
 .local/share/icons/Flat-Remix-Yellow-Dark
+.config/nvim.bak
