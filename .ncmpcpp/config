@@ -2,7 +2,7 @@
 mpd_host = localhost
 mpd_port = 6600
 mpd_connection_timeout = 5
-mpd_music_dir = "/mnt/WINDOWS/Users/Rusnoto/Music"
+mpd_music_dir = "/mnt/DATA_I/Hiburan/Music"
 mpd_crossfade_time = 5
 
 # Visualizer
