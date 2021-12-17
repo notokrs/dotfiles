@@ -6,3 +6,5 @@
 .config/urxvtd-moonland
 .local/share/icons/Flat-Remix-Yellow-Dark
 .config/nvim.bak
+.config/nvim/.github
+.themes/Flat-Remix-GTK-Yellow-Dark

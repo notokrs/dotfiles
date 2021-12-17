@@ -49,6 +49,7 @@ bspc rule -a Trebleshot state=floating center=true
 bspc rule -a Cpupower-gui state=floating center=true
 bspc rule -a jetbrains-studio:jetbrains-studio:win0 state=floating center=true
 bspc rule -a Seahorse state=floating
+bspc rule -a balena-etcher-electron state=floating
 
 # bspwm color
 #bspc config active_border_color "#AD8C34"
@@ -73,4 +74,4 @@ picom --config ~/.config/picom/picom.conf &
 $HOME/.config/bspwm/autostart > /dev/null 2>&1
 
 #notify complete
-notify-send "BSPWM Loaded Successfully"
+notify-send "Welcome $USER !"

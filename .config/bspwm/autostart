@@ -30,8 +30,8 @@ killall -q light-locker
 light-locker --lock-on-lid --lock-on-suspend --class Bspwm &
 
 # megasync
-#killall mega-cmd-server
-#mega-cmd-server &
+killall mega-cmd-server
+mega-cmd-server &
 
 # keepassxc
 killall keepassxc

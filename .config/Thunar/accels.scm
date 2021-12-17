@@ -2,7 +2,6 @@
 ; this file is an automated accelerator map dump
 ;
 ; (gtk_accel_path "<Actions>/ThunarLauncher/delete-3" "<Shift>KP_Delete")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/358a0fe8cf59930d28bf7fbf0565f664" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/delete" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/invert-selection" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/open-in-new-tab" "<Primary><Shift>p")
@@ -14,7 +13,6 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-side-pane-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/sort-ascending" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-network" "")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/54647ea7ca1c7d3cf7e29c6947af9816" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/contents/help-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/move-to-trash" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/82d61b217c94d60a7962325661c547ea" "")

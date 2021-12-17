@@ -7,41 +7,14 @@ end
 local use = packer.use
 
 return packer.startup(function()
-   local status = require("core.utils").load_config().plugins.status
-
-   -- FUNCTION: override_req, use `chadrc` plugin config override if present
-   -- name = name inside `default_config` / `chadrc`
-   -- default_req = run this if 'name' does not exist in `default_config` / `chadrc`
-   -- if override or default_req start with `(`, then strip that and assume override calls a function, not a whole file
-   local override_req = function(name, default_req)
-      local override = require("core.utils").load_config().plugins.default_plugin_config_replace[name]
-      local result
-
-      if override == nil then
-         result = default_req
-      else
-         result = override
-      end
-
-      if string.match(result, "^%(") then
-         result = result:sub(2)
-         result = result:gsub("%)%.", "').", 1)
-         return "require('" .. result
-      else
-         return "require('" .. result .. "')"
-      end
-   end
+   local plugin_settings = require("core.utils").load_config().plugins
+   local override_req = require("core.utils").override_req
 
    -- this is arranged on the basis of when a plugin starts
 
    -- this is the nvchad core repo containing utilities for some features like theme swticher, no need to lazy load
-   use {
-      "Nvchad/extensions",
-   }
-
-   use {
-      "nvim-lua/plenary.nvim",
-   }
+   use "Nvchad/extensions"
+   use "nvim-lua/plenary.nvim"
 
    use {
       "wbthomason/packer.nvim",
@@ -64,14 +37,14 @@ return packer.startup(function()
 
    use {
       "famiu/feline.nvim",
-      disable = not status.feline,
+      disable = not plugin_settings.status.feline,
       after = "nvim-web-devicons",
       config = override_req("feline", "plugins.configs.statusline"),
    }
 
    use {
       "akinsho/bufferline.nvim",
-      disable = not status.bufferline,
+      disable = not plugin_settings.status.bufferline,
       after = "nvim-web-devicons",
       config = override_req("bufferline", "plugins.configs.bufferline"),
       setup = function()
@@ -81,21 +54,20 @@ return packer.startup(function()
 
    use {
       "lukas-reineke/indent-blankline.nvim",
-      disable = not status.blankline,
+      disable = not plugin_settings.status.blankline,
       event = "BufRead",
       config = override_req("indent_blankline", "(plugins.configs.others).blankline()"),
    }
 
    use {
       "norcalli/nvim-colorizer.lua",
-      disable = not status.colorizer,
+      disable = not plugin_settings.status.colorizer,
       event = "BufRead",
       config = override_req("nvim_colorizer", "(plugins.configs.others).colorizer()"),
    }
 
    use {
       "nvim-treesitter/nvim-treesitter",
-      branch = "0.5-compat",
       event = "BufRead",
       config = override_req("nvim_treesitter", "plugins.configs.treesitter"),
    }
@@ -103,9 +75,9 @@ return packer.startup(function()
    -- git stuff
    use {
       "lewis6991/gitsigns.nvim",
-      disable = not status.gitsigns,
+      disable = not plugin_settings.status.gitsigns,
       opt = true,
-      config = override_req("gitsigns", "plugins.configs.gitsigns"),
+      config = override_req("gitsigns", "(plugins.configs.others).gitsigns()"),
       setup = function()
          require("core.utils").packer_lazy_load "gitsigns.nvim"
       end,
@@ -128,14 +100,14 @@ return packer.startup(function()
 
    use {
       "ray-x/lsp_signature.nvim",
-      disable = not status.lspsignature,
+      disable = not plugin_settings.status.lspsignature,
       after = "nvim-lspconfig",
       config = override_req("signature", "(plugins.configs.others).signature()"),
    }
 
    use {
       "andymass/vim-matchup",
-      disable = not status.vim_matchup,
+      disable = not plugin_settings.status.vim_matchup,
       opt = true,
       setup = function()
          require("core.utils").packer_lazy_load "vim-matchup"
@@ -144,7 +116,7 @@ return packer.startup(function()
 
    use {
       "max397574/better-escape.nvim",
-      disable = not status.esc_insertmode,
+      disable = not plugin_settings.status.esc_insertmode,
       event = "InsertEnter",
       config = override_req("better_escape", "(plugins.configs.others).better_escape()"),
    }
@@ -153,20 +125,20 @@ return packer.startup(function()
 
    use {
       "rafamadriz/friendly-snippets",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       event = "InsertEnter",
    }
 
    use {
       "hrsh7th/nvim-cmp",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       after = "friendly-snippets",
       config = override_req("nvim_cmp", "plugins.configs.cmp"),
    }
 
    use {
       "L3MON4D3/LuaSnip",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       wants = "friendly-snippets",
       after = "nvim-cmp",
       config = override_req("luasnip", "(plugins.configs.others).luasnip()"),
@@ -174,44 +146,44 @@ return packer.startup(function()
 
    use {
       "saadparwaiz1/cmp_luasnip",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       after = "LuaSnip",
    }
 
    use {
       "hrsh7th/cmp-nvim-lua",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       after = "cmp_luasnip",
    }
 
    use {
       "hrsh7th/cmp-nvim-lsp",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       after = "cmp-nvim-lua",
    }
 
    use {
       "hrsh7th/cmp-buffer",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       after = "cmp-nvim-lsp",
    }
 
    use {
       "hrsh7th/cmp-path",
-      disable = not status.cmp,
+      disable = not plugin_settings.status.cmp,
       after = "cmp-buffer",
    }
    -- misc plugins
    use {
       "windwp/nvim-autopairs",
-      disable = not status.cmp,
-      after = "nvim-cmp",
+      disable = not plugin_settings.status.autopairs,
+      after = plugin_settings.options.autopairs.loadAfter,
       config = override_req("nvim_autopairs", "(plugins.configs.others).autopairs()"),
    }
 
    use {
       "glepnir/dashboard-nvim",
-      disable = not status.dashboard,
+      disable = not plugin_settings.status.dashboard,
       config = override_req("dashboard", "plugins.configs.dashboard"),
       setup = function()
          require("core.mappings").dashboard()
@@ -219,11 +191,12 @@ return packer.startup(function()
    }
 
    use {
-      "terrortylor/nvim-comment",
-      disable = not status.comment,
-      cmd = "CommentToggle",
+      "numToStr/Comment.nvim",
+      disable = not plugin_settings.status.comment,
+      module = "Comment",
       config = override_req("nvim_comment", "(plugins.configs.others).comment()"),
       setup = function()
+         require("core.utils").packer_lazy_load "Comment.nvim"
          require("core.mappings").comment()
       end,
    }
@@ -231,7 +204,7 @@ return packer.startup(function()
    -- file managing , picker etc
    use {
       "kyazdani42/nvim-tree.lua",
-      disable = not status.nvimtree,
+      disable = not plugin_settings.status.nvimtree,
       cmd = { "NvimTreeToggle", "NvimTreeFocus" },
       config = override_req("nvim_tree", "plugins.configs.nvimtree"),
       setup = function()
@@ -250,7 +223,7 @@ return packer.startup(function()
          },
          {
             "nvim-telescope/telescope-media-files.nvim",
-            disable = not status.telescope_media,
+            disable = not plugin_settings.status.telescope_media,
             setup = function()
                require("core.mappings").telescope_media()
             end,
@@ -261,6 +234,6 @@ return packer.startup(function()
          require("core.mappings").telescope()
       end,
    }
-
+   -- load user defined plugins
    require("core.hooks").run("install_plugins", use)
 end)
