@@ -5,7 +5,7 @@
 	<name>Open Terminal Here</name>
 	<unique-id>1601134153921965-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
-	<description>Example for a custom action</description>
+	<description></description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
@@ -18,5 +18,18 @@
 	<description></description>
 	<patterns>*</patterns>
 	<directories/>
+</action>
+<action>
+	<icon>kdeconnect</icon>
+	<name>Send to Mobile</name>
+	<unique-id>1640845500408571-1</unique-id>
+	<command>mconnectctl share-file /org/mconnect/device/0 %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 </actions>

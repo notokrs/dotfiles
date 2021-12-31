@@ -41,6 +41,10 @@ keepassxc &
 killall mate-power-manager
 mate-power-manager &
 
+#MConnect
+killall mconnect
+mconnect &
+
 #xpad
 #killall -q xpad
 #xpad &

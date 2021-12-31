@@ -136,6 +136,8 @@ alias restart-polybar="$HOME/.config/polybar/launch"
 alias vim=nvim
 alias clear-ram="doas sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias trim-all="doas fstrim -va"
+alias start-mysql="doas rc-service mariadb start"
+alias stop-mysql="doas rc-service mariadb stop"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh

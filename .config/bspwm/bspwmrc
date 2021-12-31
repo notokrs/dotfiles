@@ -50,6 +50,7 @@ bspc rule -a Cpupower-gui state=floating center=true
 bspc rule -a jetbrains-studio:jetbrains-studio:win0 state=floating center=true
 bspc rule -a Seahorse state=floating
 bspc rule -a balena-etcher-electron state=floating
+bspc rule -a Java:java:Dbeaver state=floating center=true
 
 # bspwm color
 #bspc config active_border_color "#AD8C34"
