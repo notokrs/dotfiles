@@ -3,7 +3,7 @@
 Thank you for visiting my dotfiles repository! This is my personal dotfiles (configuration) for my artix linux system and another app too.
 This dotfiles were inspired by the song [=LOVE](https://equal-love.fandom.com/wiki/%EF%BC%9DLOVE) entitled [Weekend Citron](https://www.youtube.com/watch?v=skgh3juWdFU) (_watch the MV if you like_ 😳).
 
-![screenshoot](https://i.ibb.co/VMVs5bz/screenshoot.png)
+![screenshoot](https://raw.githubusercontent.com/notokrs/dotfiles/master/.screenshot/screenshoot.png)
 
 ## My Setup
 
