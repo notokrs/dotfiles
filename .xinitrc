@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
-userresources=$HOME/.Xresources
+userResources=$HOME/.Xresources
 
 # Merge in defaults and keymaps
-if [ -f "$userresources" ]; then
-    xrdb -load "$userresources"
+if [ -f "$userResources" ]; then
+    xrdb -load "$userResources"
 fi
 
 # start some nice programs

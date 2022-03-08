@@ -138,6 +138,9 @@ alias clear-ram="doas sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 alias trim-all="doas fstrim -va"
 alias start-mysql="doas rc-service mariadb start"
 alias stop-mysql="doas rc-service mariadb stop"
+alias start-apache="doas rc-service httpd start"
+alias stop-apache="doas rc-service httpd stop"
+alias xampp-manager="doas /opt/lampp/manager-linux-x64.run"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
