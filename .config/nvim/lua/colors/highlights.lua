@@ -12,6 +12,7 @@ local folder_bg = colors.folder_bg
 local green = colors.green
 local grey = colors.grey
 local grey_fg = colors.grey_fg
+local light_grey = colors.light_grey
 local line = colors.line
 local nord_blue = colors.nord_blue
 local one_bg = colors.one_bg
@@ -36,7 +37,7 @@ else
    fg("Comment", grey_fg)
 end
 
--- Disable cusror line
+-- Disable cursor line
 cmd "hi clear CursorLine"
 -- Line number
 fg("cursorlinenr", white)
@@ -77,10 +78,8 @@ end
 -- [[ Plugin Highlights
 
 -- Dashboard
-fg("DashboardCenter", grey_fg)
-fg("DashboardFooter", grey_fg)
-fg("DashboardHeader", grey_fg)
-fg("DashboardShortcut", grey_fg)
+fg("AlphaHeader", grey_fg)
+fg("AlphaButtons", light_grey)
 
 -- Git signs
 fg_bg("DiffAdd", blue, "NONE")
@@ -91,6 +90,7 @@ fg_bg("DiffDelete", red, "NONE")
 
 -- Indent blankline plugin
 fg("IndentBlanklineChar", line)
+fg("IndentBlanklineSpaceChar", line)
 
 -- Lsp diagnostics
 
@@ -100,7 +100,7 @@ fg("DiagnosticWarn", yellow)
 fg("DiagnosticInformation", green)
 
 -- NvimTree
-fg("NvimTreeEmptyFolderName", blue)
+fg("NvimTreeEmptyFolderName", folder_bg)
 fg("NvimTreeEndOfBuffer", darker_black)
 fg("NvimTreeFolderIcon", folder_bg)
 fg("NvimTreeFolderName", folder_bg)
@@ -108,11 +108,10 @@ fg("NvimTreeGitDirty", red)
 fg("NvimTreeIndentMarker", one_bg2)
 bg("NvimTreeNormal", darker_black)
 bg("NvimTreeNormalNC", darker_black)
-fg("NvimTreeOpenedFolderName", blue)
+fg("NvimTreeOpenedFolderName", folder_bg)
 fg("NvimTreeRootFolder", red .. " gui=underline") -- enable underline for root folder in nvim tree
 fg_bg("NvimTreeStatuslineNc", darker_black, darker_black)
-fg("NvimTreeVertSplit", darker_black)
-bg("NvimTreeVertSplit", darker_black)
+fg_bg("NvimTreeVertSplit", darker_black, darker_black)
 fg_bg("NvimTreeWindowPicker", red, black2)
 
 -- Telescope
@@ -155,8 +154,7 @@ if ui.transparency then
    bg("NvimTreeNormal", "NONE")
    bg("NvimTreeNormalNC", "NONE")
    bg("NvimTreeStatusLineNC", "NONE")
-   bg("NvimTreeVertSplit", "NONE")
-   fg("NvimTreeVertSplit", grey)
+   fg_bg("NvimTreeVertSplit", grey, "NONE")
 
    -- telescope
    bg("TelescopeBorder", "NONE")

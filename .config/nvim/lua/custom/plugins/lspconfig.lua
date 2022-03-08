@@ -24,6 +24,15 @@ M.setup_lsp = function(attach, capabilities)
       filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
       root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json")
     }
-end
 
+   -- PHP
+   lspconfig.intelephense.setup {
+      on_attach = attach,
+      capabilities = capabilities,
+      cmd = { "intelephense", "--stdio" },
+      filetypes = { "php" },
+      root_dir = lspconfig.util.root_pattern("composer.json", ".git")
+   }
+
+   end
 return M
