@@ -54,6 +54,8 @@ bspc rule -a Java:java:Dbeaver state=floating center=true
 bspc rule -a Magnus state=floating
 bspc rule -a Weston\ Compositor state=floating
 bspc rule -a Caffeine state=floating
+bspc rule -a Xfce4-power-manager-settings state=floating center=true
+bspc rule -a Brave-browser:crx_nkbihfbeogaeaoehlefnkodbefgpgknn state=floating
 
 # bspwm color
 #bspc config active_border_color "#AD8C34"

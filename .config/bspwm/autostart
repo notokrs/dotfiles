@@ -38,8 +38,8 @@ killall keepassxc
 keepassxc &
 
 # powermanager
-killall mate-power-manager
-mate-power-manager &
+killall xfce4-power-manager
+xfce4-power-manager &
 
 #MConnect
 killall mconnect

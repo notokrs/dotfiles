@@ -121,14 +121,14 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export GRADLE_USER_HOME="/mnt/DATA_II/Android-Studio/.gradle"
+export GRADLE_USER_HOME="/mnt/DATA_III/Android-Studio/.gradle"
 export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS='-Dsun.java2d.opengl-true -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export NO_AT_BRIDGE=1
 #export STUDIO_JDK=/usr/lib/jvm/default
 export PATH="/usr/google/appinventor/commands-for-Appinventor:$PATH"
-export ANDROID_SDK="/mnt/DATA_II/Android-Studio/SDK"
+export ANDROID_SDK="/mnt/DATA_III/Android-Studio/SDK"
 export PATH="$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH"
 
 # Alias
