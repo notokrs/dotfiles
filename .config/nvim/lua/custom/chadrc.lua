@@ -6,7 +6,7 @@ local userPlugins = require "custom.plugins"
 
 M.plugins = {
    status = {
-      colorizer = true, 
+      colorizer = true, -- color hex code
       alpha = true, -- dashboard
    },
 
@@ -24,10 +24,12 @@ M.plugins = {
    install = userPlugins,
 }
 
+-- UI
 M.ui = {
    theme = "monekai",
 }
 
+-- Mappings no plugins
 M.mappings = {
   misc = {
     close_buffer = "<C-w>"
