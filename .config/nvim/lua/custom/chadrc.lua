@@ -1,39 +1,44 @@
 local M = {}
 
--- PLUGINS
-local plugin_conf = require "custom.plugins.configs"
+local override = require "custom.override"
 local userPlugins = require "custom.plugins"
 
 M.plugins = {
-   status = {
-      colorizer = true, -- color hex code
-      alpha = true, -- dashboard
-   },
+    status = {
+        colorizer = true, -- color hex code
+        alpha = true, -- dashboard
+      },
 
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig",
       },
+
+      statusline = {
+         separator_style = "round",
+      },
    },
 
-   default_plugin_config_replace = {
-      nvim_treesitter = plugin_conf.treesitter,
-      nvim_tree = plugin_conf.nvimtree,
+   override = {
+      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
+      ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
+      ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
    },
 
-   install = userPlugins,
+   user = userPlugins,
 }
 
--- UI
 M.ui = {
    theme = "monekai",
+   hl_override = require "custom.highlights",
 }
 
--- Mappings no plugins
-M.mappings = {
-  misc = {
-    close_buffer = "<C-w>"
-  }
+M.mappings = require "custom.mappings"
+
+M.options = {
+   user = function()
+      require "custom.options"
+   end,
 }
 
 return M
