@@ -128,8 +128,9 @@ export _JAVA_OPTIONS='-Dsun.java2d.opengl-true -Dawt.useSystemAAFontSettings=on 
 export NO_AT_BRIDGE=1
 #export STUDIO_JDK=/usr/lib/jvm/default
 export PATH="/usr/google/appinventor/commands-for-Appinventor:$PATH"
-export ANDROID_SDK="/mnt/DATA_III/Android-Studio/SDK"
-export PATH="$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH"
+export ANDROID_HOME="/mnt/DATA_III/Android-Studio/SDK/Linux"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export ADB_MDNS_OPENSCREEN=1
 
 # Alias
 alias restart-polybar="$HOME/.config/polybar/launch"

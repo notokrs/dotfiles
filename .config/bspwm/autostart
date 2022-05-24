@@ -49,4 +49,8 @@ mconnect &
 #killall -q xpad
 #xpad &
 
+#playerctld
+killall playerctld
+playerctld &
+
 exit 1
