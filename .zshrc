@@ -130,7 +130,7 @@ export NO_AT_BRIDGE=1
 export PATH="/usr/google/appinventor/commands-for-Appinventor:$PATH"
 export ANDROID_HOME="/mnt/DATA_III/Android-Studio/SDK/Linux"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
-export ADB_MDNS_OPENSCREEN=1
+export ADB_MDNS_OPENSCREEN=1 
 
 # Alias
 alias restart-polybar="$HOME/.config/polybar/launch"

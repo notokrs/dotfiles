@@ -19,17 +19,4 @@
 	<patterns>*</patterns>
 	<directories/>
 </action>
-<action>
-	<icon>kdeconnect</icon>
-	<name>Send to Mobile</name>
-	<unique-id>1640845500408571-1</unique-id>
-	<command>mconnectctl share-file /org/mconnect/device/0 %f</command>
-	<description></description>
-	<patterns>*</patterns>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
-</action>
 </actions>

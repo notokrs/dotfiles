@@ -42,8 +42,8 @@ killall xfce4-power-manager
 xfce4-power-manager &
 
 #MConnect
-killall mconnect
-mconnect &
+killall /usr/lib/kdeconnectd
+/usr/lib/kdeconnectd &
 
 #xpad
 #killall -q xpad

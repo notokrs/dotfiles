@@ -189,4 +189,4 @@ Print
 
 # Scrot
 super + Print
-	scrot ~/Pictures/Screenshoot/%Y-%M-%d_%H-%M.png && notify-send "Screenshoot success"
+	scrot ~/Pictures/Screenshot/%Y-%M-%d_%H-%M.png && notify-send "Screenshot success"
