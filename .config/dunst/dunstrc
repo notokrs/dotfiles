@@ -59,7 +59,7 @@
 
     ### Misc/Advanced ###
 
-    #dmenu
+    # dmenu
     dmenu = /usr/bin/rofi -dmenu -p dunst show_indicators = true indicate_hidden = false
 
     # Browser

@@ -1,0 +1,14 @@
+#! /bin/sh
+
+wid="$1"
+class="$2"
+
+case "$class" in
+	Brave-browser)
+		case "$(xprop -id "$wid" WM_WINDOW_ROLE)" in
+			pop-up) 
+				echo "state=floating center=true"
+			;;
+		esac
+		;;
+esac
